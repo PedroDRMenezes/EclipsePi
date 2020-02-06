@@ -26,7 +26,7 @@ public class PostImpl implements IPostService{
 
 	@Override
 	public List<Post> recuperaTodos() {
-		return (List<Post>)repo.findAll();
+		return (List<Post>)repo.findByOrderByIdDesc();
 	}
 
 	@Override

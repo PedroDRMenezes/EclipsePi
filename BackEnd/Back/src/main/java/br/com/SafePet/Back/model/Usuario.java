@@ -1,5 +1,6 @@
 package br.com.SafePet.Back.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -48,19 +49,19 @@ public class Usuario {
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
 	@JsonIgnoreProperties("usuario")
-	private List<MeuAnimal> meuAnimal;
+	private List<MeuAnimal> meuAnimal = new ArrayList<MeuAnimal>();
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
 	@JsonIgnoreProperties("usuario")
-	private List<AnimalAdocao> animalAdocao;
+	private List<AnimalAdocao> animalAdocao = new ArrayList<AnimalAdocao>();
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "autorPost")
 	@JsonIgnoreProperties({"autorPost", "comentarios", "autorComentario"})
-	private List<Post> post;
+	private List<Post> post = new ArrayList<Post>();
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "autorComentario")
 	@JsonIgnoreProperties({"autorComentario", "post", "autorPost"})
-	private List<Comentarios> comentario;
+	private List<Comentarios> comentario = new ArrayList<Comentarios>();
 
 	public int getId() {
 		return id;

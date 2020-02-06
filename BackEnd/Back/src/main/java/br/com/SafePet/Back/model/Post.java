@@ -1,5 +1,6 @@
 package br.com.SafePet.Back.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -34,7 +35,7 @@ public class Post {
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
 	@JsonIgnoreProperties({"post", "comentario"})
-	private List<Comentarios> comentarios;
+	private List<Comentarios> comentarios = new ArrayList<Comentarios>();
 
 	@ManyToOne
 	@JsonIgnoreProperties({"comentarios", "post", "autorComentario"})

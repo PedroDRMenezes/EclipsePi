@@ -23,13 +23,15 @@ public class MeuAnimalController {
 	private IMeuAnimalService serve;
 	
 	@PostMapping("/meuAnimal/novo")
-	public ResponseEntity<MeuAnimal> novoUsuario(@RequestBody MeuAnimal meuAnimal){
+	public ResponseEntity<MeuAnimal> novoMeuAnimal(@RequestBody MeuAnimal meuAnimal){
+		System.out.println(meuAnimal);
+		System.out.println("ativei o back");
 		serve.adicionaMeuAnimal(meuAnimal);
 		return ResponseEntity.ok(meuAnimal);
 	}
 	
 	@PutMapping("/meuAnimal/atualiza")
-	public ResponseEntity<MeuAnimal> atualizaUsuario(@RequestBody MeuAnimal meuAnimal){
+	public ResponseEntity<MeuAnimal> atualizaMeuAnimal(@RequestBody MeuAnimal meuAnimal){
 		serve.atualizaMeuAnimal(meuAnimal);
 		return ResponseEntity.ok(meuAnimal);
 	}
