@@ -42,12 +42,16 @@ public class UsuarioController {
 	
 	@PostMapping("/usuario/novo")
 	public ResponseEntity<Usuario> novoUsuario(@RequestBody Usuario usuario){
+		try {
 		serve.adicionaUsuario(usuario);
 		return ResponseEntity.ok(usuario);
+		}catch(Exception err){
+		return ResponseEntity.badRequest().build();
+		}
 	}
 	
 	@PutMapping("/usuario/atualiza")
-	public ResponseEntity<Usuario> atualizaUsuario(@RequestBody Usuario usuario){
+	public ResponseEntity<Usuario> atualizaUsuario(@RequestBody Usuario usuario){		
 		serve.atualizaUsuario(usuario);
 		return ResponseEntity.ok(usuario);
 	}

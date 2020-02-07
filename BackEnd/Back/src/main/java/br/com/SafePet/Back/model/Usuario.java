@@ -35,7 +35,7 @@ public class Usuario {
 	@Column(name = "foto", length = 300)
 	private String foto;
 
-	@Column(name = "email", length = 50)
+	@Column(name = "email", length = 50, unique=true)
 	private String email;
 
 	@Column(name = "telefone", length = 25)
