@@ -26,11 +26,11 @@ public class Comentarios {
 	private int commentLike;
 
 	@ManyToOne
-	@JsonIgnoreProperties({"comentarios", "post", "autorPost"})
+	@JsonIgnoreProperties({"comentario", "post", "autorComentario", "meuAnimal", "animalAdocao"})
 	private Usuario autorComentario;
 
 	@ManyToOne
-	@JsonIgnoreProperties({"comentarios", "autorPost", "autorComentario"})
+	@JsonIgnoreProperties({"comentario", "autorPost", "autorComentario"})
 	private Post post;
 
 	public int getId() {

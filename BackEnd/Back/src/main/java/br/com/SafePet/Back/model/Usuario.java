@@ -56,7 +56,7 @@ public class Usuario {
 	private List<AnimalAdocao> animalAdocao = new ArrayList<AnimalAdocao>();
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "autorPost")
-	@JsonIgnoreProperties({"autorPost", "comentarios", "autorComentario"})
+	@JsonIgnoreProperties({"autorPost", "Comentarios", "autorComentario"})
 	private List<Post> post = new ArrayList<Post>();
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "autorComentario")

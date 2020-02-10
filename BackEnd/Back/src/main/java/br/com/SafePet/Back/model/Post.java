@@ -34,11 +34,11 @@ public class Post {
 	private int postLike;
 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
-	@JsonIgnoreProperties({"post", "comentario"})
+	@JsonIgnoreProperties({"post", "Comentarios"})
 	private List<Comentarios> comentarios = new ArrayList<Comentarios>();
 
 	@ManyToOne
-	@JsonIgnoreProperties({"comentarios", "post", "autorComentario"})
+	@JsonIgnoreProperties({"comentario", "post", "autorComentario", "meuAnimal", "animalAdocao"})
 	private Usuario autorPost;
 
 	public int getId() {

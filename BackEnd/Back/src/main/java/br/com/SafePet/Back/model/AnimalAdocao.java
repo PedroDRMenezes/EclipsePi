@@ -44,7 +44,7 @@ public class AnimalAdocao {
 	private String adocaoFoto;
 
 	@ManyToOne
-	@JsonIgnoreProperties("animalAdocao")
+	@JsonIgnoreProperties({"comentario", "post", "autorComentario", "meuAnimal", "animalAdocao"})
 	private Usuario usuario;
 
 	public int getId() {
